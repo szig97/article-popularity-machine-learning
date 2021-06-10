@@ -1,0 +1,84 @@
+/* * {
+  box-sizing: border-box;
+  font-family: Ubuntu, sans-serif;
+} */
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #fdefd3;
+  color:#033f63;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.center{
+ text-align: center;
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+#summary {
+  background-color: #b5b682;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+#work {
+  background-color: #28666e;
+  color: #fedc97;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+#model {
+  background-color: #864142;
+  color: #fdefd3;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.imgindex {
+  border: 3px solid #fdefd3;
+}
+
+#hlineindex {
+  width: 700px;
+  border: 1px solid #303d44;
+  border-radius: 5px;
+}
+
+#hlinedata {
+  width: 700px;
+  border: 1px solid #fdefd3;
+  border-radius: 5px;
+}
+
+#hlinemodel {
+  width: 700px;
+  border: 1px solid #001219;
+  border-radius: 5px;
+}
+
+/* The footer is positioned at the bottom of the page */
+.footer {
+  position: relative;
+  margin-top: 15px;
+  min-height: 20px;
+  padding-top: 5px;
+  background: #005f73;
+  color: #e9d8a6;
+  text-align: center;
+  font-weight: bold;
+}
+
+.footer a:link {color: #f8f0df; }
+.footer a:visited {color: #959669; }
+
+
+/*   */
