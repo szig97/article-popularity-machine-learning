@@ -76,3 +76,9 @@ body {
   text-align: center;
   font-weight: bold;
 }
+
+.footer a:link {color: #f8f0df; }
+.footer a:visited {color: #959669; }
+
+
+/*   */
