@@ -10,6 +10,7 @@ body {
   margin: 0;
   background-color: #fdefd3;
   color:#033f63;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .center{
@@ -26,17 +27,43 @@ body {
   border-radius: 5px;
 }
 
-#choropleth {
-  position: relative;
-  margin-bottom: 10px;
-  background: #0A9396;
-  border-color: #0A9396;
-  border-style: solid;
-  border-width: 5px;
-  height: 75vh;
-  width: 100%;
+#work {
+  background-color: #28666e;
+  color: #fedc97;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  border-radius: 5px;
 }
 
+#model {
+  background-color: #864142;
+  color: #fdefd3;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.imgindex {
+  border: 3px solid #fdefd3;
+}
+
+#hlineindex {
+  width: 700px;
+  border: 1px solid #303d44;
+  border-radius: 5px;
+}
+
+#hlinedata {
+  width: 700px;
+  border: 1px solid #fdefd3;
+  border-radius: 5px;
+}
+
+#hlinemodel {
+  width: 700px;
+  border: 1px solid #001219;
+  border-radius: 5px;
+}
 
 /* The footer is positioned at the bottom of the page */
 .footer {
@@ -48,18 +75,4 @@ body {
   color: #e9d8a6;
   text-align: center;
   font-weight: bold;
-}
-
-/* choropleth legend formatting */
-.legend {
-  line-height: 18px;
-  color: #001219;
-  background-color: #ebebeb;
-}
-.legend i {
-  width: 18px;
-  height: 18px;
-  float: left;
-  margin-right: 8px;
-  opacity: 0.7;
 }
