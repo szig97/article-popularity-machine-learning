@@ -62,45 +62,61 @@
         
         <hr id="hlinemodel">
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Mauris in aliquam sem fringilla ut morbi tincidunt. Risus in hendrerit gravida rutrum quisque
-          non tellus orci ac. Velit ut tortor pretium viverra suspendisse potenti nullam. Nisl nisi scelerisque eu
-          ultrices vitae. Sed pulvinar proin gravida hendrerit lectus. Viverra mauris in aliquam sem fringilla. Sed
-          egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. Elit sed vulputate mi sit.
-          Dolor sit amet consectetur adipiscing elit ut aliquam. Quis enim lobortis scelerisque fermentum dui faucibus
-          in. Integer feugiat scelerisque varius morbi. Condimentum mattis pellentesque id nibh. Sed ullamcorper morbi
-          tincidunt ornare massa eget. Velit scelerisque in dictum non consectetur a. Vitae suscipit tellus mauris a
-          diam. Facilisis volutpat est velit egestas dui. Quam pellentesque nec nam aliquam sem et tortor consequat id.
+        <p>
+          To first understand the random forest algorithm, it is important to understand, at a high level, decision trees. Specifically, this model uses 
+          classification trees, because the intented output is categorical, as opposed to a continuous variable. In a decision tree,
+          the leaves represent classes, while the branches represent conjunctions of attributes that lead to that class. The conjunctions are 
+          typically yes/no or true/false questions that will lead to one class or another. For large datasets, these trees can grow very 
+          large and complex.
+        </p>
+        <p>
+          A random forest algorithm works in a similar way to a decision tree, but instead of making one large tree, it takes a subset of the data 
+          and creates many smaller trees. While these trees have weaker predictive power than a larger decision tree, collectively these trees can become
+          very powerful. In these algorithms, it is important to set the number of trees to be made in the forest. For this project, 200 was chosen.
+          In this project, both a decision tree and random forest algorithm were implemented on the full dataset. The goal of the algorithms were to 
+          predict the amount of shares for the articles based on article characteristics. There were 3 categories in the dataset, with each category
+          having the same number of articles. Therefore, randomly guessing would result in a 33% success rate. The results are shown below.
+        </p>
+        <table style="border:1px solid black;margin-left:auto;margin-right:auto;padding:2px;border-spacing:20px;">
+          <tr>
+            <th>Algorithm</th>
+            <th>Accuracy (%)</th>
+            <th>Time (s)</th>
+          </tr>
+          <tr>
+            <td>Decision Tree</td>
+            <td style="text-align:center">42.0</td>
+            <td style="text-align:center">1.46</td>
+          </tr>
+          <tr>
+            <td>Random Forest</td>
+            <td style="text-align:center">50.9</td>
+            <td style="text-align:center">26.46</td>
+          </tr>
+        </table>
+
+        <p>
+          As seen in the above table, the random forest algorithm performs better at predicting 
+          article success based on article attributes than the decision tree algorithm. However, this 8.9% increase 
+          in accuracy does come with a significant time increase, from 1.46 seconds to 26.46. 
         </p>
 
-        <img class="center imgindex" src="../../graphics/yellowstone1.jpg" alt="geysers" width="324" height="187">
+        <p>
+          In addition to comparing the two algorithms, a deeper analysis into the random forest algorithm was performed.
+          After the algorithm has been trained, all 58 features can be ranked by importance. For a deeper analysis, only the 3 most important
+          features were used in an analysis. Then, the next 3 most important features were added, etc until the 57 most important
+          features were added. Therefore, the algorithm was run 19 times with varying amounts of features used. 
+          Then, accuracy and time were analyzed for all 19 trials. The results are shown below.
+        </p>
 
-        <p>Sollicitudin tempor id eu nisl nunc mi. Donec enim diam vulputate ut pharetra. Senectus et netus et malesuada
-          fames ac turpis. A cras semper auctor neque vitae tempus quam. Tristique sollicitudin nibh sit amet commodo
-          nulla facilisi. Est ante in nibh mauris cursus mattis molestie a. Viverra orci sagittis eu volutpat odio
-          facilisis. Nunc consequat interdum varius sit amet mattis vulputate. Dui sapien eget mi proin. Vitae elementum
-          curabitur vitae nunc sed. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. Quis imperdiet
-          massa tincidunt nunc pulvinar sapien et. Integer malesuada nunc vel risus commodo. Vitae tempus quam
-          pellentesque nec nam aliquam sem et. Netus et malesuada fames ac turpis. Augue lacus viverra vitae congue eu.
-          Purus sit amet luctus venenatis lectus magna. Arcu non sodales neque sodales ut etiam sit.</p>
+        <img class="center imgindex" src="../../graphics/RFGraphics/AccvsTime.png" alt="Accuracy vs Time Graph" width="324" height="187">
 
-        <img class="center imgindex" src="../../graphics/tetons.jpg" alt="mountains" width="324" height="243">
-
-        <p>Dignissim enim sit amet venenatis urna. Sem et tortor consequat id. Id nibh tortor id aliquet. Amet luctus
-          venenatis lectus magna fringilla. Egestas erat imperdiet sed euismod nisi porta lorem mollis aliquam. At
-          elementum eu facilisis sed odio morbi. Nulla porttitor massa id neque aliquam. Parturient montes nascetur
-          ridiculus mus mauris vitae ultricies leo integer. Sit amet volutpat consequat mauris nunc congue nisi. Quis
-          lectus nulla at volutpat diam ut venenatis. Accumsan lacus vel facilisis volutpat est velit. Posuere morbi leo
-          urna molestie at elementum eu facilisis sed. Eros donec ac odio tempor orci. Lectus arcu bibendum at varius
-          vel pharetra vel turpis. Netus et malesuada fames ac turpis. Viverra mauris in aliquam sem fringilla. Nulla
-          malesuada pellentesque elit eget gravida cum sociis natoque penatibus. A lacus vestibulum sed arcu non odio
-          euismod. Vitae ultricies leo integer malesuada. Lectus nulla at volutpat diam ut venenatis tellus in.</p>
-
-        <img class="center imgindex" src="../../graphics/yellowstone2.jpg" alt="canyon" width="243" height="292">
-
-        <p>Integer feugiat scelerisque varius morbi enim. Turpis nunc eget lorem dolor. Risus in hendrerit gravida
-          rutrum. Tincidunt lobortis feugiat vivamus at. Massa placerat duis ultricies lacus. Nec sagittis aliquam
-          malesuada bibendum arcu vitae. Gravida dictum fusce ut placerat. </p>
+        <p>
+          As seen above, there is a clear positive correlation between accuracy and time required. This is to be expected. As 
+          more features are added, the results will become more accurate, but the models will take longer to train and run.
+          It is important to note that there appears to be some randomness, especially towards the right of the graph. But, as a whole,
+          it is clear there is a positive relationship between accuracy and time taken.
+        </p>
 
       </div>
     </div>
