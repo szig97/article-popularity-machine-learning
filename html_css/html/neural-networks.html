@@ -62,46 +62,45 @@
         
         <hr id="hlinemodel">
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Mauris in aliquam sem fringilla ut morbi tincidunt. Risus in hendrerit gravida rutrum quisque
-          non tellus orci ac. Velit ut tortor pretium viverra suspendisse potenti nullam. Nisl nisi scelerisque eu
-          ultrices vitae. Sed pulvinar proin gravida hendrerit lectus. Viverra mauris in aliquam sem fringilla. Sed
-          egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. Elit sed vulputate mi sit.
-          Dolor sit amet consectetur adipiscing elit ut aliquam. Quis enim lobortis scelerisque fermentum dui faucibus
-          in. Integer feugiat scelerisque varius morbi. Condimentum mattis pellentesque id nibh. Sed ullamcorper morbi
-          tincidunt ornare massa eget. Velit scelerisque in dictum non consectetur a. Vitae suscipit tellus mauris a
-          diam. Facilisis volutpat est velit egestas dui. Quam pellentesque nec nam aliquam sem et tortor consequat id.
+        <p>A neural nework simulates a lot of densly interconnected brain cells inside a computer in order for it to learn 
+          things and make decisions in a humanlike way. A typical neural network has many different artificial neurons, called units, 
+          arranged in a series of layers. Input units recieve information from the outside world. Output units signal how it
+          responds to the information it has learned. Between these two layers lie one or more layers that are hidden units.
+          Most neural networks are fully connected. This means each hidden unit and each output unit is connected to every unit
+          in the layers on either side. Neural networks are trained by feeding a bunch of inputs into it and comparing the resulting outputs
+          to a known label.
         </p>
 
-        <img class="center imgindex" src="../../graphics/yellowstone1.jpg" alt="geysers" width="324" height="187">
+        <img class="center imgindex" src="../../graphics/NN_graphics/neural_network.png" alt="neural network" width="500" height="250">
 
-        <p>Sollicitudin tempor id eu nisl nunc mi. Donec enim diam vulputate ut pharetra. Senectus et netus et malesuada
-          fames ac turpis. A cras semper auctor neque vitae tempus quam. Tristique sollicitudin nibh sit amet commodo
-          nulla facilisi. Est ante in nibh mauris cursus mattis molestie a. Viverra orci sagittis eu volutpat odio
-          facilisis. Nunc consequat interdum varius sit amet mattis vulputate. Dui sapien eget mi proin. Vitae elementum
-          curabitur vitae nunc sed. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. Quis imperdiet
-          massa tincidunt nunc pulvinar sapien et. Integer malesuada nunc vel risus commodo. Vitae tempus quam
-          pellentesque nec nam aliquam sem et. Netus et malesuada fames ac turpis. Augue lacus viverra vitae congue eu.
-          Purus sit amet luctus venenatis lectus magna. Arcu non sodales neque sodales ut etiam sit.</p>
+        <p>The initial neural network model started with 58 features and one target with three categories. The data were 
+          then split into training and testing data and the x values were scaled. The target values were one-hot-encoded. 
+          The hidden layer in this case had 100 units and activation 'relu'. The model was then fit with 16,303 total parameters 
+          and the same number of trainable parameters. The resulting model had loss of 1.71 and an accuracy score of 43.4%. 
+          The addition of another hidden layer resulted in a lower accuracy score. The next step was to figure out the importance
+          of each feature. The following graph shows each feature's importance.
+        </p>
 
-        <img class="center imgindex" src="../../graphics/tetons.jpg" alt="mountains" width="324" height="243">
+        <img class="center imgindex" src="../../graphics/NN_graphics/feature_importance.png" alt="mountains" width="500" height="250">
 
-        <p>Dignissim enim sit amet venenatis urna. Sem et tortor consequat id. Id nibh tortor id aliquet. Amet luctus
-          venenatis lectus magna fringilla. Egestas erat imperdiet sed euismod nisi porta lorem mollis aliquam. At
-          elementum eu facilisis sed odio morbi. Nulla porttitor massa id neque aliquam. Parturient montes nascetur
-          ridiculus mus mauris vitae ultricies leo integer. Sit amet volutpat consequat mauris nunc congue nisi. Quis
-          lectus nulla at volutpat diam ut venenatis. Accumsan lacus vel facilisis volutpat est velit. Posuere morbi leo
-          urna molestie at elementum eu facilisis sed. Eros donec ac odio tempor orci. Lectus arcu bibendum at varius
-          vel pharetra vel turpis. Netus et malesuada fames ac turpis. Viverra mauris in aliquam sem fringilla. Nulla
-          malesuada pellentesque elit eget gravida cum sociis natoque penatibus. A lacus vestibulum sed arcu non odio
-          euismod. Vitae ultricies leo integer malesuada. Lectus nulla at volutpat diam ut venenatis tellus in.</p>
+        <p>The next model I tried was a model with the least important features removed. I removed any feature with a score below zero 
+          which resulted in a model with 40 features and its accuracy was 43.49%. The next model I tried was a model with the top ten features. 
+          This model had a slight increase in accuracy. From there, I both added some freatures and removed some features until I found 
+          the model with the greatest accuracy. This model had six features and its accuracy score was 45.3%. Next, I added an extra hidden layers
+          to all three models and in each case the accuracy decreased. Next, I changed the activation function to 'elu', or 'exponential linear unit',
+          and all three models achieved their best scores. The model with 40 features had the highest accuracy with 47.3%
+        </p>
 
-        <img class="center imgindex" src="../../graphics/yellowstone2.jpg" alt="canyon" width="243" height="292">
+        <img class="center imgindex" src="../../graphics/NN_graphics/accuracy_loss_curves.png" alt="canyon" width="500" height="250">
 
-        <p>Integer feugiat scelerisque varius morbi enim. Turpis nunc eget lorem dolor. Risus in hendrerit gravida
-          rutrum. Tincidunt lobortis feugiat vivamus at. Massa placerat duis ultricies lacus. Nec sagittis aliquam
-          malesuada bibendum arcu vitae. Gravida dictum fusce ut placerat. </p>
+        <p>The above graphs are accuracy and loss curves, or learning curves, for the model with 40 features. Learning curves are widely used to evaluate neural networks. 
+          The training loss is decreasing and continuing to decrease at the end of the plot. This is a characteristic of an underfit model. An underfit model is a model 
+          that cannot learn the training dataset. The noisy values of high loss may also indicate the model had trouble learning the training
+          dataset. For more on learning curves, <a href="https://machinelearningmastery.com/learning-curves-for-diagnosing-machine-learning-model-performance/">click here</a>.
 
+        </p>
+
+        <i style="font-size:10px">Image credit: https://towardsdatascience.com/applied-deep-learning-part-1-artificial-neural-networks-d7834f67a4f6</i>
       </div>
     </div>
 
