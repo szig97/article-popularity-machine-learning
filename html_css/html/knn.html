@@ -63,8 +63,7 @@
         <p>KNN, or K-Nearest Neighbors is a supervised machine learning model that is most frequently used for
           classification. The model looks at each data point to determine the distance between it and the other data
           points and then classifies the data points into their various groups. As a supervised model, the correct
-          classification of each data point is know when the training model is initiated.
-        </p>
+          classification of each data point is know when the training model is initiated.</p>
 
         <img class="center imgindex" src="../../graphics/knn_graphics/knn_example.jpg" alt="knn">
 
@@ -83,13 +82,24 @@
 
         <h3>Model Comparison</h3>
 
-        <P>many words</P>
-        <img class="center imgindex" src="../../graphics/tetons.jpg" alt="mountains" width="324" height="243">
+        <P>The same general approach was taken when evaluating the 3-Category and 5-Category datasets: one-hot encoding
+          the output classes vs. not one-hot encoding the output classes. The two models which did not have their output
+          classes one-hot encoded performed marginally well, with their accuracy above the threshold of random chance,
+          47.0% vs. 33% and 29.4% vs. 20%, respectively..</P>
 
-        <br>
+        <img class="img-fluid imgindex" src="../../graphics/knn_graphics/3cat_Scaling_noOHE.png" alt="3cat"> <img
+          class="img-fluid imgindex" src="../../graphics/knn_graphics/5cat_Scaling_noOHE.png" alt="3cat">
 
-        <P>more words</P>
+        <br> <br>
+        <P>As compared to the models above, randomly choosing a category of article success was more accurate than the
+          one-hot encoded models. The 3-Category accuracy converged around 25% accuracy where the 5-Category data
+          converged just above 1% accuracy. Whilst neither model crosses the threshold of random chance, the 3-Cagegory
+          model was moderately more accurate than the 5-Category model. </P>
+        <img class="img-fluid imgindex" src="../../graphics/knn_graphics/3cat_Scaling_OHE.png" alt="3cat" height="236"
+          width="391"> <img class="img-fluid imgindex" src="../../graphics/knn_graphics/5cat_Scaling_OHE.png" alt="3cat"
+          height="236" width="391">
 
+        <br> <br>
         <h3>Final Thoughts</h3>
         <p>In the end, the models in which one-hot encoding was not deployed yielded better accuracy. With enough
           neighbors, the accuracy was able to surpass the chance percentage of 33% or 20% for the two data sets. </p>
@@ -99,6 +109,9 @@
           resulted in our percentiles being quite close together and ultimately the short differences between data
           points were not immediately obvious to the model; i.e. very hard to differentiate. This is the predominate
           theory as to why the one-hot encoded models performed so poorly. </p>
+
+        <p>As expected, the 3-Category model was a bit more accurate than the 5-Category model. We speculate that is
+          because it is easier for the model to differentiate the distances between neighbors with a bit more ease.</p>
 
       </div>
     </div>
