@@ -65,10 +65,15 @@
           typically yes/no or true/false questions that will lead to one class or another. For large datasets, these trees can grow very 
           large and complex.
         </p>
+        <img class="center imgindex" src="../../graphics/RFGraphics/DecisionTreePic.jpg" alt="Decision Tree Pic" width="324" height="187">
         <p>
           A random forest algorithm works in a similar way to a decision tree, but instead of making one large tree, it takes a subset of the data 
           and creates many smaller trees. While these trees have weaker predictive power than a larger decision tree, collectively these trees can become
-          very powerful. In these algorithms, it is important to set the number of trees to be made in the forest. For this project, 200 was chosen.
+          very powerful. In these algorithms, it is important to set the number of trees to be made in the forest. For this project, 200 was chosen. The graphic
+          below shows an example random forest with 3 trees.
+        </p>
+        <img class="center imgindex" src="../../graphics/RFGraphics/RandomForestGraphic.png" alt="Random Forest Graphic" width="380" height="187">
+        <p>
           In this project, both a decision tree and random forest algorithm were implemented on the full dataset. The goal of the algorithms were to 
           predict the amount of shares for the articles based on article characteristics. There were 3 categories in the dataset, with each category
           having the same number of articles. Therefore, randomly guessing would result in a 33% success rate. The results are shown below.
