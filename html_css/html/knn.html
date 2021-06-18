@@ -55,48 +55,50 @@
       <!-- First column -->
       <div id="model" class="col-sm-9 flex-column flex-wrap">
         <h1 class="center">K Nearest Neighbors</h1>
-        
+
         <hr id="hlinemodel">
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Mauris in aliquam sem fringilla ut morbi tincidunt. Risus in hendrerit gravida rutrum quisque
-          non tellus orci ac. Velit ut tortor pretium viverra suspendisse potenti nullam. Nisl nisi scelerisque eu
-          ultrices vitae. Sed pulvinar proin gravida hendrerit lectus. Viverra mauris in aliquam sem fringilla. Sed
-          egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. Elit sed vulputate mi sit.
-          Dolor sit amet consectetur adipiscing elit ut aliquam. Quis enim lobortis scelerisque fermentum dui faucibus
-          in. Integer feugiat scelerisque varius morbi. Condimentum mattis pellentesque id nibh. Sed ullamcorper morbi
-          tincidunt ornare massa eget. Velit scelerisque in dictum non consectetur a. Vitae suscipit tellus mauris a
-          diam. Facilisis volutpat est velit egestas dui. Quam pellentesque nec nam aliquam sem et tortor consequat id.
+        <h3>Introduction</h3>
+
+        <p>KNN, or K-Nearest Neighbors is a supervised machine learning model that is most frequently used for
+          classification. The model looks at each data point to determine the distance between it and the other data
+          points and then classifies the data points into their various groups. As a supervised model, the correct
+          classification of each data point is know when the training model is initiated.
         </p>
 
-        <img class="center imgindex" src="../../graphics/yellowstone1.jpg" alt="geysers" width="324" height="187">
+        <img class="center imgindex" src="../../graphics/knn_graphics/knn_example.jpg" alt="knn">
 
-        <p>Sollicitudin tempor id eu nisl nunc mi. Donec enim diam vulputate ut pharetra. Senectus et netus et malesuada
-          fames ac turpis. A cras semper auctor neque vitae tempus quam. Tristique sollicitudin nibh sit amet commodo
-          nulla facilisi. Est ante in nibh mauris cursus mattis molestie a. Viverra orci sagittis eu volutpat odio
-          facilisis. Nunc consequat interdum varius sit amet mattis vulputate. Dui sapien eget mi proin. Vitae elementum
-          curabitur vitae nunc sed. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. Quis imperdiet
-          massa tincidunt nunc pulvinar sapien et. Integer malesuada nunc vel risus commodo. Vitae tempus quam
-          pellentesque nec nam aliquam sem et. Netus et malesuada fames ac turpis. Augue lacus viverra vitae congue eu.
-          Purus sit amet luctus venenatis lectus magna. Arcu non sodales neque sodales ut etiam sit.</p>
+        <br>
+        <p>Initially, this dataset had a target value set that was defined in integers. This would work for a
+          regression, but less so in a model that excels in classification, (although KNN can be used for regressions).
+          To aid in the classification, our group choose to split data into specific percentile, 33% percentile and 66%
+          percentile for three categories and 20%/40%/60%/80% percentiles for 5 categories. The analysis was done on the
+          3-Category dataset and the 5-category dataset. Each set brought forth a new set of challenges. </p>
 
+        <p>As part of implementing the KNN model, the data was scaled. Some of the data contained negative values and
+          some data was a magnitude or two larger other data. For every parameter to be of equal consideration in our
+          model, scaling all parameters was necessary. After the data prepped for our KNN model, the target data was
+          categorized in a single column with value of [0, 1, 2] and [0, 1, 2, 3, 4] for the 3-Category and 5-category
+          datasets respectively. Therefore, our output classes were one-hot encoded. </p>
+
+        <h3>Model Comparison</h3>
+
+        <P>many words</P>
         <img class="center imgindex" src="../../graphics/tetons.jpg" alt="mountains" width="324" height="243">
 
-        <p>Dignissim enim sit amet venenatis urna. Sem et tortor consequat id. Id nibh tortor id aliquet. Amet luctus
-          venenatis lectus magna fringilla. Egestas erat imperdiet sed euismod nisi porta lorem mollis aliquam. At
-          elementum eu facilisis sed odio morbi. Nulla porttitor massa id neque aliquam. Parturient montes nascetur
-          ridiculus mus mauris vitae ultricies leo integer. Sit amet volutpat consequat mauris nunc congue nisi. Quis
-          lectus nulla at volutpat diam ut venenatis. Accumsan lacus vel facilisis volutpat est velit. Posuere morbi leo
-          urna molestie at elementum eu facilisis sed. Eros donec ac odio tempor orci. Lectus arcu bibendum at varius
-          vel pharetra vel turpis. Netus et malesuada fames ac turpis. Viverra mauris in aliquam sem fringilla. Nulla
-          malesuada pellentesque elit eget gravida cum sociis natoque penatibus. A lacus vestibulum sed arcu non odio
-          euismod. Vitae ultricies leo integer malesuada. Lectus nulla at volutpat diam ut venenatis tellus in.</p>
+        <br>
 
-        <img class="center imgindex" src="../../graphics/yellowstone2.jpg" alt="canyon" width="243" height="292">
+        <P>more words</P>
 
-        <p>Integer feugiat scelerisque varius morbi enim. Turpis nunc eget lorem dolor. Risus in hendrerit gravida
-          rutrum. Tincidunt lobortis feugiat vivamus at. Massa placerat duis ultricies lacus. Nec sagittis aliquam
-          malesuada bibendum arcu vitae. Gravida dictum fusce ut placerat. </p>
+        <h3>Final Thoughts</h3>
+        <p>In the end, the models in which one-hot encoding was not deployed yielded better accuracy. With enough
+          neighbors, the accuracy was able to surpass the chance percentage of 33% or 20% for the two data sets. </p>
+
+        <p>In the Random Forrest analysis, a feature importance analysis was done and it turns out that there are no
+          clear features that can easily predict article popularity. This data is also very heavily skewed right which
+          resulted in our percentiles being quite close together and ultimately the short differences between data
+          points were not immediately obvious to the model; i.e. very hard to differentiate. This is the predominate
+          theory as to why the one-hot encoded models performed so poorly. </p>
 
       </div>
     </div>
