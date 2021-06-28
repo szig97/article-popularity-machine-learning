@@ -15,7 +15,7 @@ The dataset used in this project can be downloaded here: https://archive.ics.uci
 ## Technologies
 This project was created with:
 * HTML/CSS/Bootstrap
-* Skikit learn
+* Scikit learn
 * Pandas
 * Matplotlib
 * Tableau
